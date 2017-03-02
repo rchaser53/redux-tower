@@ -20,5 +20,5 @@ function posts(state = initial, { type, payload }: Action) {
 }
 
 export default combineReducers(
-  { posts }
+  { posts, router }
 );

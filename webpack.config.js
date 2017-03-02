@@ -5,7 +5,8 @@ var webpack = require('webpack');
 module.exports = {
   entry: {
     minimum: './examples/minimum/index.js',
-    blog: './examples/blog/index.js'
+    blog: './examples/blog/index.js',
+    role: './examples/role/index.js'
   },
   module: {
     rules: [{
