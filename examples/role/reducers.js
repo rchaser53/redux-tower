@@ -7,12 +7,19 @@ import { combineReducers } from 'redux';
 import { reducer as router } from '../../src/index';
 import type { Action } from './actions';
 
-export type State = {
+export type WholeState = {
+  user: UserState
+}
+
+export type UserState = {
+  current: string;
 };
 
-const initial: State = {};
+const initialUser: UserState = {
+  current: 'normal'
+};
 
-function posts(state = initial, { type, payload }: Action) {
+function user(state:UserState = initialUser, { type, payload }: Action):UserState {
   switch (type) {
   default:
     return { ...state, dirty: payload };
@@ -20,5 +27,5 @@ function posts(state = initial, { type, payload }: Action) {
 }
 
 export default combineReducers(
-  { posts, router }
+  { user, router }
 );

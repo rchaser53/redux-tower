@@ -19,7 +19,11 @@ const routes = {
     yield <Loading />;
     yield response();
   },
-  '/': <Login />
+  '/': [function* () {
+    console.log('something to verify user');
+  },{
+    '/': <Login />
+  }]
 };
 
 //  [ERROR]: <NotFound />,
